@@ -9,15 +9,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      */
     public function homepage()
     {
-        return new Response("Question Controller");
+        return $this->render('question\homepage.html.twig');
+        // return new Response("Question Controller");
     }
 
     /**
-     * @Route("/question/{var}")
+     * @Route("/question/{var}", name="app_question_show")
      */
     public function show($var)
     {
